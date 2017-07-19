@@ -1,0 +1,174 @@
+	 *{
+	 	margin:0;
+	 	padding:0;
+	 	list-style:none;
+	 }
+	 body{
+	 	width:100%;	
+	 	background:url(../images/tooopen.jpg)no-repeat;
+	 	background-size: cover;
+	 }
+		.top{
+			width:100%;
+			height:70px;
+			position:relative;
+			background:#696969;
+			background:rgba(0,0,0,0.5);
+		}
+		.wrap{
+			width:1100px;
+			margin:0 auto;
+		}
+		.logo{
+    float:left;
+    width:176px;
+		}
+		a{
+			float:left;
+			text-decoration:none;
+			color:white;
+			margin-top:10px;
+		}
+		.nav{
+			float:left;	
+
+		}
+		.nav li{
+			float:left;
+			color:#c0c0c0;
+			margin-left:30px;
+			margin-top:10px;
+		}
+	.nav li a:hover{
+		color:#3366CC;
+	}
+		#muisc{
+			width:100%;
+		}
+		#muisc ul{
+			width:100%;
+			margin:0 auto;
+			
+		}
+		#muisc li{
+			display:inline-block;
+			width:220px;
+			margin:10px 20px 0 60px;
+		}
+		#muisc li img{
+			width:220px;
+			height:200px;
+		}
+		#fox{
+			margin:90px auto 30px 440px;
+			width:500px;
+			height:35px;
+			border:2px solid gray;
+			border-radius:10px;
+		}
+		#inp{
+			position:relative;
+			outline: none;
+			 border-style: none;
+			 width:445px;
+			 height:37px;
+			 border-top-left-radius:9px;
+			  border-bottom-left-radius:10px;
+
+		}
+		#btn{
+			position:absolute;
+			height:35px;
+			width:55px;
+			border-bottom-right-radius:5px;
+			border-top-right-radius:5px;
+			cursor:pointer;
+
+
+		}
+		#ul{
+			padding-bottom:50px;
+		}
+		#ul li{
+			border:2px solid gray;
+			border-radius:10px;
+		}
+		#ul li img{
+			border-radius:10px;
+		}
+	#ul li	span{
+			width: 100%;
+			text-align: center;
+			line-height:10px;
+			cursor:pointer;
+			color:red;
+		}
+		#ul li	b{
+		 margin-left:10px;
+		 font-family:"iconfont";
+			cursor:pointer;
+		color:red;
+		}
+		#ul li	p{
+			cursor:pointer;
+			color:blue;
+		}
+		#player{
+			width:100%;
+			background:rgba(0,0,0,0.5);
+			position:fixed;
+			left:0;
+			bottom:0;
+			margin:0 auto;
+		}
+		#player span{
+			 width:200px;
+			 height:36px;
+			 line-height:36px;
+			float:left;
+			color:white;
+			margin-left:100px;
+			cursor:pointer;
+		}
+		#audio{
+		  width:500px;
+			float:left;
+			margin-left:30px;	
+			display:none;
+		}
+
+		#video{
+			margin-left:240px;
+			display:none;
+		}
+		.seek{
+			float:right;
+			width:300px;
+			height:30px;
+			color:white;
+			margin-top:10px;
+		}
+		h3{
+			float:right;
+			margin-right:20px;
+		}
+		.inp{
+			width:245px;
+			height:30px;
+			outline: none;
+			border-style:none;
+			background:#c0c0c0;
+			border-radius:10px;
+		}
+		#lyricContainer{
+			float:left;
+			width:350px;
+			color:white;
+			margin-left:100px;
+			height:36px;
+			line-height:36px;
+		}
+	#lyricContainer li{
+		width:100%;
+
+	}

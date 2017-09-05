@@ -15,6 +15,18 @@ window.onload=function(){
 						 news(data);
 				})
 			}
+			inp.onkeydown=function(){
+				if(event.keyCode==13){
+					oul.innerHTML='';
+					if (inp.value=='') {
+						alert('不能为空');
+						return false;
+					}
+					ajax('get','https://api.imjad.cn/cloudmusic/?type=search&s='+inp.value,true,function(data){
+						 news(data);
+					})
+				}
+			}
 			var off=0;
 		window.onscroll=function(){
 			off++;
@@ -28,17 +40,17 @@ window.onload=function(){
 		}
 	}
 		function news(data){
-			 var oul =document.getElementById('ul');	 	
-			 for (var i = 0; i <data.result.songs.length; i++){ 
+			 var oul =document.getElementById('ul');
+			 for (var i = 0; i <data.result.songs.length; i++){
 			 var li =document.createElement('li');
 			 var img=document.createElement('img');
 			 var span=document.createElement('span');
 			 var p=document.createElement('p');
 			 var b=document.createElement('b');
 			  img.setAttribute('src',data.result.songs[i].al.picUrl);
-			  span.setAttribute('data-id',data.result.songs[i].id);
-			 	span.setAttribute('name',data.result.songs[i].name);
-			 	span.setAttribute('name-id',data.result.songs[i].ar[0].name);
+			  img.setAttribute('data-id',data.result.songs[i].id);
+			 	img.setAttribute('name',data.result.songs[i].name);
+			 	img.setAttribute('name-id',data.result.songs[i].ar[0].name);
 			 	p.setAttribute('p-id',data.result.songs[i].ar[0].name);
 			  img.setAttribute('alt',data.result.songs[i].mv);
 			  	b.setAttribute('id',data.result.songs[i].mv);
@@ -51,17 +63,17 @@ window.onload=function(){
 			  span.innerText=data.result.songs[i].name;
 			  p.innerText=data.result.songs[i].ar[0].name;
 			  li.appendChild(img);
-			  li.appendChild(span);	 
+			  li.appendChild(span);
 			  li.appendChild(b);
 			  li.appendChild(p);
-			  oul.appendChild(li); 
+			  oul.appendChild(li);
 			 }
 				oul.onclick=function(e){
 					var o=e||window.event;
 					var target=o.srcElement||o.target;
 					var audio=document.getElementById('audio');
 					var video=document.getElementById('video');
-					if (target.nodeName.toLowerCase()=='span') {
+					if (target.nodeName.toLowerCase()=='img') {
 						ajax('get','https://api.imjad.cn/cloudmusic/?type=song&id='+target.getAttribute('data-id')+'&br=128000',true,function(data){
 							 var url=data.data[0].url;
 							audio.setAttribute('src',url);
@@ -80,7 +92,6 @@ window.onload=function(){
 
 										for(var i=0;i<arr_lyric.length-1;i++){
 										 	arr_lyric_time.push(arr_lyric[i].match(reg));
-
 										 	arr_lyric_body.push(arr_lyric[i].replace(reg2, ''));
 										}
 
@@ -116,7 +127,7 @@ window.onload=function(){
 										}
 									}
 								)
-						})	
+						})
 							audio.style.display='block';
 							video.style.display='none';
 							video.pause();
@@ -138,7 +149,7 @@ window.onload=function(){
 							 }
 							 video.setAttribute('src',arr[1])
 						})
-						
+
 							video.style.display='block';
 							audio.pause();
 					}
